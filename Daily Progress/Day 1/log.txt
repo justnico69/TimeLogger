@@ -1,0 +1,36 @@
+DAY 1 is the initialization of the project, specifically setting up the Frontend.
+
+
+Problems Encountered(Day 1)
+1. Data Cleaning
+The raw data from the QR scanner wasn't a clean string; it contained Tab characters (`\t`) and inconsistent spacing. I used a **Regular Expression** to split the string correctly:
+`const parts = raw.split(/\s+/);`
+
+2. Handling Name Variations
+Since names can have different lengths (Middle initials, multiple last names), I used `.slice()` and `.join()` to keep the full name together while isolating the ID and Course.
+
+3. State Transitions
+I implemented a `setLog` function that checks the "previous state" to decide what happens next. 
+* If no one is scanned: Create a **Time In**.
+* If someone is already scanned: Add a **Time Out**.
+
+Current flow achieved for today: 
+04/02/2026
+[Scanner detects QR]
+        ↓
+handleScan() runs
+        ↓
+Extract name
+        ↓
+Get current time
+        ↓
+Check previous state (log)
+        ↓
+Update state (setLog)
+        ↓
+React re-renders UI
+        ↓
+UI shows:
+  - Status
+  - Time In
+  - Time Out
