@@ -1,0 +1,23 @@
+DAY 2 is the backend implementation of the project, specifically connecting the app to the PostgreSQL database and building the attendance API.
+
+
+DAY 2 RECAP: 
+1. Set up Prisma with the Student and AttendanceLog models to store attendance data in PostgreSQL.
+2. Configured the Prisma client in app/lib/prisma.ts using DATABASE_URL and a reusable PostgreSQL adapter.
+3. Built the attendance API route to upsert student data and automatically log IN and OUT time entries.
+
+Current flow achieved for today: 
+04/03/2026
+[Scanner or frontend sends QR data]
+        ↓
+POST /api/attendance runs
+        ↓
+Validate id, name, and course
+        ↓
+Upsert student into PostgreSQL
+        ↓
+Check for active attendance log
+        ↓
+Create Time In or Time Out entry
+        ↓
+Return IN or OUT response
