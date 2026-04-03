@@ -1,18 +1,10 @@
 DAY 1 is the initialization of the project, specifically setting up the Frontend.
 
 
-Problems Encountered(Day 1)
-1. Data Cleaning
-The raw data from the QR scanner wasn't a clean string; it contained Tab characters (`\t`) and inconsistent spacing. I used a **Regular Expression** to split the string correctly:
-`const parts = raw.split(/\s+/);`
-
-2. Handling Name Variations
-Since names can have different lengths (Middle initials, multiple last names), I used `.slice()` and `.join()` to keep the full name together while isolating the ID and Course.
-
-3. State Transitions
-I implemented a `setLog` function that checks the "previous state" to decide what happens next. 
-* If no one is scanned: Create a **Time In**.
-* If someone is already scanned: Add a **Time Out**.
+DAY 1 RECAP: 
+1. Used Regex /\s+/ to handle Tabs in QR string.
+2. Used .slice(0,4) because the intern name has 4 parts.
+3. Used a functional update (prev) to toggle between IN and OUT status.
 
 Current flow achieved for today: 
 04/02/2026
