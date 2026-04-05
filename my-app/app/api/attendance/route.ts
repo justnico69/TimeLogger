@@ -114,3 +114,32 @@ return NextResponse.json({
     }
     
 }
+
+export async function GET(){
+  try{
+
+    const startOfDay = new Date();
+    startOfDay.setHours(0,0,0,0);
+
+    const endOfDay = new Date();
+    endOfDay.setHours(23,59,59,999);
+
+    const logs = await prisma.attendanceLog.findMany({
+      where: {
+        timeIn: {
+          gte: startOfDay,
+          lte: endOfDay,
+        },
+      },
+      include: {
+        student: true,
+      },
+      orderBy: {
+        timeIn: "asc",
+      },
+    });
+    return NextResponse.json(logs);
+  }catch(error){
+    return NextResponse.json({ error: "Failed to fetch logs"}, {status: 500})
+  }
+}

@@ -1,0 +1,21 @@
+DAY 4 is the implementation phase of the frontend upgrade, specifically completing the Supabase connection so attendance information is now stored properly and building the UI with shadcn components.
+
+
+DAY 4 RECAP: 
+1. Implemented the proper Supabase connection so attendance records and student information are now saved and retrieved from the database.
+2. Built the interface using shadcn components to make the scanner, record sheet, and related controls more structured and reusable.
+3. Connected the UI flow to the backend data source so the table now reflects stored attendance information instead of only temporary state.
+
+Current flow achieved for today: 
+04/05/2026
+[Scanner detects QR code]
+        ↓
+Process attendance data
+        ↓
+Send information to Supabase
+        ↓
+Store or retrieve saved records
+        ↓
+Render data using shadcn components
+        ↓
+UI shows updated attendance log
