@@ -14,8 +14,6 @@ Define revised component structure
         ↓
 Install shadcn component set
         ↓
-Map existing views to reusable shadcn blocks
-        ↓
 Initialize Supabase connection setup
         ↓
 Prepare env-driven config for client usage

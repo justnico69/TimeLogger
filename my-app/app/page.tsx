@@ -125,7 +125,7 @@ export default function App() {
 
           <Popover>
             <PopoverTrigger asChild>
-              <Button variant="outline" className="w-[240px] justify-start text-left font-normal bg-white">
+              <Button variant="outline" className="w-60 justify-start text-left font-normal bg-white">
                 <CalendarIcon className="mr-2 h-4 w-4" />
                 {date ? format(date, "PPP") : <span>Pick a date</span>}
               </Button>
@@ -150,7 +150,7 @@ export default function App() {
                   <Scanner onScan={handleScan} />
                 </div>
 
-                <div className="min-h-[80px] flex items-center justify-center">
+                <div className="min-h-20 flex items-center justify-center">
                   {!result && !loading && (
                     <div className="text-center text-slate-400 text-sm animate-pulse">Waiting for scan...</div>
                   )}
